@@ -117,6 +117,14 @@ namespace CustomerConsole
             var serializeCustomerList = JsonSerializer.Serialize(customerList);
             Console.WriteLine(serializeCustomerList);
             Console.WriteLine("\n");
+
+            Console.WriteLine("############## Deserialize json into a list of customer object ##############");
+            var deserializeCustomerList = JsonSerializer.Deserialize<List<Customer>>(serializeCustomerList);
+            foreach (var customer in deserializeCustomerList)
+            {
+                Console.WriteLine($" Name: {customer.Name}, Age: {customer.Age}, Email: {customer.Email}");
+            }
+            Console.WriteLine("\n");
         }
     }
 }
