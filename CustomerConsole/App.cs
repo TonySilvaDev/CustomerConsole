@@ -55,6 +55,13 @@ namespace CustomerConsole
                     Age = 40,
                     Email = "fina@mail.com"
                 },
+                new Customer()
+                {
+                    Id = 5,
+                    Name = "Doe",
+                    Age = 45,
+                    Email = "doe@mail.com"
+                }
             };
 
             _dataProvider.SaveCustomerList(customerList);
@@ -88,6 +95,20 @@ namespace CustomerConsole
                 Console.WriteLine("No customer older than 30");
             }
             Console.WriteLine("\n");
+
+            Console.WriteLine("############## Customers whose names contains 'Doe' ##############");
+            var customerContainsDoe = customerList.Where(c => c.Name.Contains("Doe")).ToList();
+            if (customerContainsDoe.Count > 0)
+            {
+                foreach (var customer in customerContainsDoe)
+                {
+                    Console.WriteLine($"Name: {customer.Name}, Age: {customer.Age}, Email: {customer.Email}");
+                }
+            }
+            else
+            {
+                Console.WriteLine("No name contains 'Doe'");
+            }
         }
     }
 }
