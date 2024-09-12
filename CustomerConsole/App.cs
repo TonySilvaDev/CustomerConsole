@@ -58,7 +58,7 @@ namespace CustomerConsole
                 },
                 new Customer()
                 {
-                    Id = 5,
+                    Id = 6,
                     Name = "Doe",
                     Age = 45,
                     Email = "doe@mail.com"
@@ -68,6 +68,22 @@ namespace CustomerConsole
             _dataProvider.SaveCustomerList(customerList);
 
             Console.WriteLine($"Added {customerList.Count} customers");
+            Console.WriteLine("\n");
+        }
+
+        public void SaveCustomer()
+        {
+            Console.WriteLine("############## Populate one customer ##############");
+            Customer customer = new Customer()
+            {
+                Id = 7,
+                Name = "Pepe",
+                Age = 15,
+                Email = "pepe@mail.com"
+            };
+
+            _dataProvider.SaveCustomer(customer);
+            Console.WriteLine($"Added 1 customer");
             Console.WriteLine("\n");
         }
 

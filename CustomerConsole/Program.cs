@@ -12,4 +12,6 @@ var customerApp = builder.GetRequiredService<App>();
 
 customerApp.SaveCustomerList();
 
+customerApp.SaveCustomer();
+
 customerApp.GetCustomerList();
