@@ -62,5 +62,16 @@ namespace CustomerConsole
             Console.WriteLine($"Added {customerList.Count} customers");
             Console.WriteLine("\n");
         }
+
+        public void GetCustomerList()
+        {
+            Console.WriteLine("############## Show all customers ##############");
+            var customerList = _dataProvider.GetCustomerList();
+            foreach (var customer in customerList)
+            {
+                Console.WriteLine($"Name: {customer.Name}, Age: {customer.Age}, Email: {customer.Email}");
+            }
+            Console.WriteLine("\n");
+        }
     }
 }

@@ -11,3 +11,5 @@ var builder = new ServiceCollection()
 var customerApp = builder.GetRequiredService<App>();
 
 customerApp.SaveCustomerList();
+
+customerApp.GetCustomerList();

@@ -15,7 +15,7 @@ namespace CustomerConsole.Repository
 
         public List<Customer> GetCustomerList()
         {
-            throw new NotImplementedException();
+            return _customerList;
         }
 
         public List<Customer> GetCustomerListByAgeRange(int startAge, int endAge)
