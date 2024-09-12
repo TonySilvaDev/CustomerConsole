@@ -38,21 +38,21 @@ namespace CustomerConsole
                 {
                     Id = 3,
                     Name = "Fernanda",
-                    Age = 20,
+                    Age = 30,
                     Email = "fernanda@mail.com"
                 },
                 new Customer()
                 {
                     Id = 4,
                     Name = "Carlos",
-                    Age = 20,
+                    Age = 35,
                     Email = "carlos@mail.com"
                 },
                 new Customer()
                 {
                     Id = 5,
                     Name = "Fina",
-                    Age = 20,
+                    Age = 40,
                     Email = "fina@mail.com"
                 },
             };
@@ -70,6 +70,22 @@ namespace CustomerConsole
             foreach (var customer in customerList)
             {
                 Console.WriteLine($"Name: {customer.Name}, Age: {customer.Age}, Email: {customer.Email}");
+            }
+            Console.WriteLine("\n");
+
+            Console.WriteLine("############## Show customers older than 30 years ##############");
+            var customersOlderThan30 = customerList.Where(c => c.Age > 30).ToList();
+
+            if (customersOlderThan30.Count > 0)
+            {
+                foreach (var customer in customersOlderThan30)
+                {
+                    Console.WriteLine($"Name: {customer.Name}, Age: {customer.Age}, Email: {customer.Email}");
+                }
+            }
+            else
+            {
+                Console.WriteLine("No customer older than 30");
             }
             Console.WriteLine("\n");
         }
