@@ -1,4 +1,5 @@
-﻿using CustomerConsole.Repository.IRepository;
+﻿using CustomerConsole.Data;
+using CustomerConsole.Repository.IRepository;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,6 +10,9 @@ namespace CustomerConsole.Repository
 {
     public class FileCustomerDataProvider : ICustomerDataProvider
     {
+        private static List<Customer> _customerList = CustomerData.CustomerList;
+
+
         public List<Customer> GetCustomerList()
         {
             throw new NotImplementedException();
@@ -21,12 +25,12 @@ namespace CustomerConsole.Repository
 
         public void SaveCustomer(Customer customer)
         {
-            throw new NotImplementedException();
+            _customerList.Add(customer);
         }
 
         public void SaveCustomerList(List<Customer> customerList)
         {
-            throw new NotImplementedException();
+            _customerList.AddRange(customerList);
         }
     }
 }
