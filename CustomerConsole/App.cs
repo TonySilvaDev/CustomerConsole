@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.Json;
 using System.Threading.Tasks;
 
 namespace CustomerConsole
@@ -109,6 +110,13 @@ namespace CustomerConsole
             {
                 Console.WriteLine("No name contains 'Doe'");
             }
+
+            Console.WriteLine("\n");
+
+            Console.WriteLine("############## Serialize list of customers to json ##############");
+            var serializeCustomerList = JsonSerializer.Serialize(customerList);
+            Console.WriteLine(serializeCustomerList);
+            Console.WriteLine("\n");
         }
     }
 }
