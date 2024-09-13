@@ -20,7 +20,7 @@ namespace CustomerConsole.Repository
 
         public List<Customer> GetCustomerListByAgeRange(int startAge, int endAge)
         {
-            throw new NotImplementedException();
+            return _customerList.Where(c => c.Age >= startAge && c.Age <= endAge).ToList();
         }
 
         public void SaveCustomer(Customer customer)

@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Text.Json;
 using System.Threading.Tasks;
+using System.Xml.Linq;
 
 namespace CustomerConsole
 {
@@ -138,7 +139,27 @@ namespace CustomerConsole
             var deserializeCustomerList = JsonSerializer.Deserialize<List<Customer>>(serializeCustomerList);
             foreach (var customer in deserializeCustomerList)
             {
-                Console.WriteLine($" Name: {customer.Name}, Age: {customer.Age}, Email: {customer.Email}");
+                Console.WriteLine($"Name: {customer.Name}, Age: {customer.Age}, Email: {customer.Email}");
+            }
+            Console.WriteLine("\n");
+        }
+        public void GetCustomerListByAgeRange()
+        {
+            Console.WriteLine("############## Customer list by age range ##############");
+            int startAge = 35;
+            int endAge = 50;
+            Console.WriteLine($"Start age: {startAge} | End age: {endAge}");
+            if (startAge > endAge)
+            {
+                Console.WriteLine("Start age must be less than end age");
+            }
+            else
+            {
+                var customersByAgeRange = _dataProvider.GetCustomerListByAgeRange(startAge, endAge);
+                foreach (var customer in customersByAgeRange)
+                {
+                    Console.WriteLine($"Name: {customer.Name}, Age: {customer.Age}, Email: {customer.Email}");
+                }
             }
             Console.WriteLine("\n");
         }
